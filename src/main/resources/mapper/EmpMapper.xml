@@ -3,5 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fh.dao.EmpDao" >
-
+    <select id="queryCount" resultType="int">
+        select count(*) from i_emp
+    </select>
+    <select id="queryEmp" parameterType="com.fh.model.Bean" resultType="com.fh.model.Emp">
+        select e.id,e.name,j.name jobName,e.salary,e.entryTime,l.name leaderName,d.name deptName
+         from i_emp e left join i_leader l on e.leaderId=l.id
+        left join i_dept d on e.deptId=d.id
+        left join i_job j on e.jobId=j.id
+        limit #{start},#{length}
+    </select>
 </mapper>
