@@ -45,4 +45,15 @@ public class EmpController {
     public void addEmp(Emp emp){
         empService.addEmp(emp);
     }
+    @RequestMapping("queryEmpById")
+    @ResponseBody
+    public Emp queryEmpById(int id){
+        Emp emp=  empService.queryEmpById(id);
+        return emp;
+    }
+    @RequestMapping("updateEmp")
+    @ResponseBody
+    public void updateEmp(Emp emp){
+        empService.updateEmp(emp);
+    }
 }

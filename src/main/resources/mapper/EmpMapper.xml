@@ -25,4 +25,11 @@
     <insert id="addEmp" parameterType="com.fh.model.Emp">
         insert into i_emp values (null,#{jobId},#{salary},#{entryTime},#{leaderId},#{deptId},#{name})
     </insert>
+    <select id="queryEmpById" parameterType="int" resultType="com.fh.model.Emp">
+        select * from i_emp where id=#{id}
+    </select>
+    <update id="updateEmp" parameterType="com.fh.model.Emp">
+        update i_emp set jobId=#{jobId},salary=#{salary},entryTime=#{entryTime},leaderId=#{leaderId},deptId=#{deptId},name=#{name}
+        where id=#{id}
+    </update>
 </mapper>

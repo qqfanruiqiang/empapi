@@ -16,4 +16,8 @@ public interface EmpDao {
     List<Dept> queryDept();
 
     void addEmp(Emp emp);
+
+    Emp queryEmpById(int id);
+
+    void updateEmp(Emp emp);
 }

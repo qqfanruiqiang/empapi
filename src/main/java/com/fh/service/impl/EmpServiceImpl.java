@@ -41,4 +41,14 @@ public class EmpServiceImpl implements EmpService {
     public void addEmp(Emp emp) {
         empDao.addEmp(emp);
     }
+
+    @Override
+    public Emp queryEmpById(int id) {
+        return empDao.queryEmpById(id);
+    }
+
+    @Override
+    public void updateEmp(Emp emp) {
+        empDao.updateEmp(emp);
+    }
 }
