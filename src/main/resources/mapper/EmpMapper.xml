@@ -13,4 +13,16 @@
         left join i_job j on e.jobId=j.id
         limit #{start},#{length}
     </select>
+    <select id="queryLeader" resultType="com.fh.model.Leader">
+        select * from i_leader
+    </select>
+    <select id="queryJob" resultType="com.fh.model.Job">
+        select * from i_job
+    </select>
+    <select id="queryDept" resultType="com.fh.model.Dept">
+        select * from i_dept
+    </select>
+    <insert id="addEmp" parameterType="com.fh.model.Emp">
+        insert into i_emp values (null,#{jobId},#{salary},#{entryTime},#{leaderId},#{deptId},#{name})
+    </insert>
 </mapper>

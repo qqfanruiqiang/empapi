@@ -1,8 +1,7 @@
 package com.fh.service.impl;
 
 import com.fh.dao.EmpDao;
-import com.fh.model.Bean;
-import com.fh.model.Emp;
+import com.fh.model.*;
 import com.fh.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,5 +20,25 @@ public class EmpServiceImpl implements EmpService {
         bean.setRecordsFiltered(count);
         List<Emp> list=empDao.queryEmp(bean);
         bean.setData(list);
+    }
+
+    @Override
+    public List<Job> queryJob() {
+        return empDao.queryJob();
+    }
+
+    @Override
+    public List<Leader> queryLeader() {
+        return empDao.queryLeader();
+    }
+
+    @Override
+    public List<Dept> queryDept() {
+        return empDao.queryDept();
+    }
+
+    @Override
+    public void addEmp(Emp emp) {
+        empDao.addEmp(emp);
     }
 }

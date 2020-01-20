@@ -1,7 +1,6 @@
 package com.fh.controller;
 
-import com.fh.model.Bean;
-import com.fh.model.Emp;
+import com.fh.model.*;
 import com.fh.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,5 +21,28 @@ public class EmpController {
     public Bean<Emp> queryEmp(Bean<Emp> bean){
         empService.queryEmp(bean);
         return bean;
+    }
+    @RequestMapping("queryJob")
+    @ResponseBody
+    public List<Job> queryJob(){
+        List<Job> list= empService.queryJob();
+        return list;
+    }
+    @RequestMapping("queryLeader")
+    @ResponseBody
+    public List<Leader> queryLeader(){
+        List<Leader> list= empService.queryLeader();
+        return list;
+    }
+    @RequestMapping("queryDept")
+    @ResponseBody
+    public List<Dept> queryDept(){
+        List<Dept> list= empService.queryDept();
+        return list;
+    }
+    @RequestMapping("addEmp")
+    @ResponseBody
+    public void addEmp(Emp emp){
+        empService.addEmp(emp);
     }
 }
