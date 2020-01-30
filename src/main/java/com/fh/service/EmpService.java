@@ -18,4 +18,6 @@ public interface EmpService {
     Emp queryEmpById(int id);
 
     void updateEmp(Emp emp);
+
+    void shanchu(int id);
 }

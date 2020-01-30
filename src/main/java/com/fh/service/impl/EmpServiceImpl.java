@@ -51,4 +51,9 @@ public class EmpServiceImpl implements EmpService {
     public void updateEmp(Emp emp) {
         empDao.updateEmp(emp);
     }
+
+    @Override
+    public void shanchu(int id) {
+        empDao.shanchu(id);
+    }
 }

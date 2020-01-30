@@ -20,4 +20,6 @@ public interface EmpDao {
     Emp queryEmpById(int id);
 
     void updateEmp(Emp emp);
+
+    void shanchu(int id);
 }

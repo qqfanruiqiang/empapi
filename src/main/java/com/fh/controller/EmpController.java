@@ -56,4 +56,9 @@ public class EmpController {
     public void updateEmp(Emp emp){
         empService.updateEmp(emp);
     }
+    @RequestMapping("shanchu")
+    @ResponseBody
+    public void shanchu(int id){
+        empService.shanchu(id);
+    }
 }

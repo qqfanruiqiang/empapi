@@ -32,4 +32,7 @@
         update i_emp set jobId=#{jobId},salary=#{salary},entryTime=#{entryTime},leaderId=#{leaderId},deptId=#{deptId},name=#{name}
         where id=#{id}
     </update>
+    <delete id="shanchu" parameterType="int">
+        delete from i_emp where id=#{id}
+    </delete>
 </mapper>
